@@ -15,6 +15,14 @@
   <a href="https://codextde.github.io/spanscreen/">Website</a>
 </p>
 
+<p align="center">
+  <img src="design/appstore/framed/en-US-pm-1.png" width="720" alt="Spanscreen on iPhone showing an extended Mac desktop">
+</p>
+
+<p align="center">
+  <img src="design/screens/mac-menu.png" width="340" alt="Spanscreen menu bar app on the Mac">
+</p>
+
 ---
 
 ## Features

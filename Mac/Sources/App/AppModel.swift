@@ -246,6 +246,29 @@ final class AppModel: ObservableObject {
         defaults.set(try? JSONEncoder().encode(defaultOptions), forKey: "defaultOptions")
     }
 
+    #if DEBUG
+    func applyDemo() {
+        let display = DisplayInfo(pixelWidth: 2852, pixelHeight: 2006, scale: 3, pixelsPerInch: 460, maxRefreshRate: 120)
+        let duo = DeviceInfo(deviceID: "duo", name: "Daniel's iPhone Duo", model: "iPhone19,4", appVersion: "1.0.0", display: display)
+        let session = HostSession(deviceID: "duo", name: duo.name, options: SessionOptions(highRefreshRate: true), requestedByDevice: false, userInitiated: true)
+        session.applyDemo(device: duo, transport: .usb)
+        sessions = ["duo": session]
+        rows = [
+            DeviceRow(id: "duo", name: duo.name, model: "iPhone19,4", isAvailable: true, viaUSB: true, viaWiFi: true, isKnown: true),
+            DeviceRow(id: "ipad", name: "iPad Pro", model: "iPad16,3", isAvailable: true, viaUSB: false, viaWiFi: true, isKnown: false)
+        ]
+        screenRecordingGranted = true
+        accessibilityGranted = true
+    }
+
+    func applyEmptyDemo() {
+        sessions = [:]
+        rows = []
+        screenRecordingGranted = true
+        accessibilityGranted = false
+    }
+    #endif
+
     private func checkForUpdate() async {
         guard let url = URL(string: "https://api.github.com/repos/codextde/spanscreen/releases/latest"),
               let (data, _) = try? await URLSession.shared.data(from: url),

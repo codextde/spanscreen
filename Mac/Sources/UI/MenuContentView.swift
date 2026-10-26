@@ -131,6 +131,7 @@ struct PermissionRow: View {
             VStack(alignment: .leading, spacing: 1) {
                 Text(title).font(.system(size: 12, weight: .semibold))
                 Text(detail).font(.system(size: 11)).foregroundStyle(.secondary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
             Spacer()
             if !granted {

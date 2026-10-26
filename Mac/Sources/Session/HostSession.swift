@@ -495,6 +495,18 @@ final class HostSession: ObservableObject, Identifiable {
     }
 }
 
+#if DEBUG
+extension HostSession {
+    func applyDemo(device: DeviceInfo, transport: TransportKind) {
+        self.device = device
+        transportKind = transport
+        phase = .streaming
+        position = .right
+        stats = StreamStats(latencyMilliseconds: 7, bitrate: 28_000_000, framesPerSecond: 120)
+    }
+}
+#endif
+
 final class StatsBox: @unchecked Sendable {
     private let lock = NSLock()
     private var stats = StreamStats()
