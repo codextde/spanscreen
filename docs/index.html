@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spanscreen: your iPhone as a second Mac display</title>
+<meta name="description" content="Extend or mirror your Mac to iPhone and iPad over Wi-Fi or USB. Built for iPhone Duo. Free and open source.">
+<meta name="apple-itunes-app" content="app-id=6827203170">
+<link rel="icon" href="icon.png">
+<meta property="og:title" content="Spanscreen">
+<meta property="og:description" content="Your iPhone as a second Mac display. Free and open source.">
+<meta property="og:image" content="https://codextde.github.io/spanscreen/icon.png">
+<style>
+  :root { --bg:#090c14; --card:rgba(255,255,255,.05); --line:rgba(255,255,255,.09); --text:#eef1f7; --muted:#97a0b3; --accent:#2e6bff; --teal:#5be6cf; }
+  * { box-sizing:border-box; margin:0; padding:0 }
+  body { background:var(--bg); color:var(--text); font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Inter",system-ui,sans-serif; -webkit-font-smoothing:antialiased }
+  a { color:inherit }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 24px }
+  .glow { position:fixed; inset:0; pointer-events:none; background:radial-gradient(600px 400px at 20% -5%, rgba(46,107,255,.28), transparent 70%), radial-gradient(500px 380px at 90% 110%, rgba(91,230,207,.14), transparent 70%) }
+  nav { display:flex; align-items:center; justify-content:space-between; padding:22px 0 }
+  nav .brand { display:flex; gap:10px; align-items:center; font-weight:650; letter-spacing:-.01em }
+  nav .brand img { width:30px; height:30px; border-radius:8px }
+  nav a.gh { color:var(--muted); text-decoration:none; font-size:15px }
+  header { padding:72px 0 56px; text-align:center }
+  header img.icon { width:112px; height:112px; border-radius:26px; box-shadow:0 24px 60px rgba(0,0,0,.5); border:1px solid var(--line) }
+  h1 { font-size:clamp(38px,6vw,64px); line-height:1.04; letter-spacing:-.035em; margin:28px auto 18px; max-width:820px; font-weight:750 }
+  h1 span { background:linear-gradient(90deg,var(--accent),#3ba0ff 55%,var(--teal)); -webkit-background-clip:text; background-clip:text; color:transparent }
+  header p { color:var(--muted); font-size:20px; max-width:620px; margin:0 auto }
+  .cta { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:34px }
+  .btn { display:inline-flex; align-items:center; gap:10px; padding:14px 22px; border-radius:14px; font-weight:600; text-decoration:none; font-size:16px; border:1px solid var(--line) }
+  .btn.primary { background:var(--accent); border-color:transparent; color:#fff }
+  .btn.secondary { background:var(--card) }
+  .btn small { display:block; font-weight:500; font-size:12px; opacity:.75 }
+  .note { margin-top:14px; color:var(--muted); font-size:14px }
+  section { padding:56px 0 }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:14px }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:20px; padding:22px }
+  .card h3 { font-size:17px; margin-bottom:6px; letter-spacing:-.01em }
+  .card p { color:var(--muted); font-size:15px }
+  h2 { font-size:clamp(28px,4vw,40px); letter-spacing:-.03em; margin-bottom:22px; font-weight:700 }
+  ol.steps { list-style:none; counter-reset:s; display:grid; gap:12px }
+  ol.steps li { counter-increment:s; display:flex; gap:16px; align-items:flex-start; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:18px 20px }
+  ol.steps li::before { content:counter(s); flex:none; width:30px; height:30px; border-radius:50%; display:grid; place-items:center; background:rgba(46,107,255,.16); color:#7fa6ff; font-weight:700; font-size:14px }
+  ol.steps li p { color:var(--muted); font-size:15px }
+  footer { border-top:1px solid var(--line); padding:28px 0 48px; color:var(--muted); font-size:14px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px }
+  footer a { text-decoration:none }
+</style>
+</head>
+<body>
+<div class="glow"></div>
+<div class="wrap">
+  <nav>
+    <div class="brand"><img src="icon.png" alt="">Spanscreen</div>
+    <a class="gh" href="https://github.com/codextde/spanscreen">GitHub</a>
+  </nav>
+
+  <header>
+    <img class="icon" src="icon.png" alt="Spanscreen app icon">
+    <h1>Your iPhone is <span>a second display</span>.</h1>
+    <p>Extend or mirror your Mac to iPhone and iPad over Wi-Fi or a USB cable. Built for iPhone Duo. Free and open source.</p>
+    <div class="cta" id="download">
+      <a class="btn primary" href="https://github.com/codextde/spanscreen/releases/latest/download/Spanscreen.dmg">
+        <span>Download for Mac<small>macOS 14 or later</small></span>
+      </a>
+      <a class="btn secondary" href="https://apps.apple.com/app/id6827203170">
+        <span>Get it for iPhone<small>App Store, free</small></span>
+      </a>
+    </div>
+    <p class="note">Signed and notarized by Codext GmbH. No account, no tracking.</p>
+  </header>
+
+  <section>
+    <div class="grid">
+      <div class="card"><h3>Extend or mirror</h3><p>A real display for macOS. Drag windows over, arrange it in System Settings, or mirror your main screen.</p></div>
+      <div class="card"><h3>Wi-Fi or cable</h3><p>Same network, peer-to-peer without a network, or USB for the lowest latency. It switches to the cable when you plug in.</p></div>
+      <div class="card"><h3>Retina sharp</h3><p>The display matches your iPhone pixel for pixel. Choose larger text or more space with one slider.</p></div>
+      <div class="card"><h3>Made for iPhone Duo</h3><p>Fold or unfold and your Mac follows: the cover screen and the large inner screen each get their native resolution.</p></div>
+      <div class="card"><h3>Touch and trackpad</h3><p>Tap to click, hold to right-click, scroll with two fingers. Or turn your iPhone into a trackpad.</p></div>
+      <div class="card"><h3>Low latency</h3><p>Hardware HEVC on both ends, no buffering, adaptive bitrate. Up to 120 Hz on ProMotion iPhones.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Set up in a minute</h2>
+    <ol class="steps">
+      <li><div><strong>Install Spanscreen for Mac</strong><p>Open the DMG, drag Spanscreen to Applications and open it. It lives in your menu bar.</p></div></li>
+      <li><div><strong>Allow Screen Recording and Accessibility</strong><p>Spanscreen needs them to show the display on your iPhone and to click with touch.</p></div></li>
+      <li><div><strong>Open Spanscreen on your iPhone</strong><p>Use the same Wi-Fi or plug in the cable, then choose your iPhone in the menu bar. Next time it connects by itself.</p></div></li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>Spanscreen by <a href="https://codext.de">Codext GmbH</a>. MIT License.</span>
+    <span><a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="https://github.com/codextde/spanscreen/issues">Support</a></span>
+  </footer>
+</div>
+</body>
+</html>

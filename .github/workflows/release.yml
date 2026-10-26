@@ -1,0 +1,154 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      mac:
+        description: Build, sign and notarize the Mac app
+        type: boolean
+        default: true
+      ios:
+        description: Build the iOS app and upload it to App Store Connect
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+env:
+  TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+
+jobs:
+  mac:
+    name: Mac app (Developer ID)
+    if: github.event_name == 'push' || inputs.mac
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Version
+        id: version
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then v="${GITHUB_REF#refs/tags/v}"; else v="$(grep -m1 'MARKETING_VERSION' project.yml | awk '{print $2}')"; fi
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          echo "build=$((GITHUB_RUN_NUMBER + 100))" >> "$GITHUB_OUTPUT"
+
+      - name: Import Developer ID certificate
+        env:
+          P12: ${{ secrets.MAC_CERTIFICATE_P12 }}
+          P12_PASSWORD: ${{ secrets.MAC_CERTIFICATE_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+        run: scripts/ci-keychain.sh "$P12" "$P12_PASSWORD" "$KEYCHAIN_PASSWORD"
+
+      - name: Store App Store Connect key
+        env:
+          KEY: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          mkdir -p ~/.appstoreconnect/private_keys
+          echo "$KEY" > ~/.appstoreconnect/private_keys/AuthKey_${{ secrets.ASC_KEY_ID }}.p8
+
+      - name: Archive
+        run: |
+          xcodebuild archive \
+            -project Spanscreen.xcodeproj \
+            -scheme SpanscreenMac \
+            -destination generic/platform=macOS \
+            -archivePath build/Spanscreen-mac.xcarchive \
+            MARKETING_VERSION=${{ steps.version.outputs.version }} \
+            CURRENT_PROJECT_VERSION=${{ steps.version.outputs.build }} \
+            CODE_SIGN_STYLE=Manual \
+            CODE_SIGN_IDENTITY="Developer ID Application" \
+            DEVELOPMENT_TEAM=$TEAM_ID \
+            OTHER_CODE_SIGN_FLAGS="--timestamp" | xcbeautify --renderer github-actions || exit ${PIPESTATUS[0]}
+
+      - name: Package, notarize and staple
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        run: scripts/package-mac.sh build/Spanscreen-mac.xcarchive/Products/Applications/Spanscreen.app build/Spanscreen.dmg
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Spanscreen-mac
+          path: build/Spanscreen.dmg
+
+      - name: Publish release
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tag="${GITHUB_REF#refs/tags/}"
+          gh release view "$tag" >/dev/null 2>&1 || gh release create "$tag" --title "Spanscreen ${tag#v}" --generate-notes
+          gh release upload "$tag" build/Spanscreen.dmg --clobber
+
+  ios:
+    name: iOS app (App Store)
+    if: github.event_name == 'push' || inputs.ios
+    runs-on: macos-26
+    steps:
+      - uses: actions/checkout@v4
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - name: Version
+        id: version
+        run: |
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then v="${GITHUB_REF#refs/tags/v}"; else v="$(grep -m1 'MARKETING_VERSION' project.yml | awk '{print $2}')"; fi
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          echo "build=$((GITHUB_RUN_NUMBER + 100))" >> "$GITHUB_OUTPUT"
+
+      - name: Import distribution certificate and profile
+        env:
+          P12: ${{ secrets.IOS_CERTIFICATE_P12 }}
+          P12_PASSWORD: ${{ secrets.IOS_CERTIFICATE_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+          PROFILE: ${{ secrets.IOS_PROVISIONING_PROFILE }}
+        run: |
+          scripts/ci-keychain.sh "$P12" "$P12_PASSWORD" "$KEYCHAIN_PASSWORD"
+          mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+          echo "$PROFILE" | base64 --decode > profile.mobileprovision
+          uuid=$(security cms -D -i profile.mobileprovision | plutil -extract UUID raw -)
+          cp profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/$uuid.mobileprovision
+          echo "PROFILE_UUID=$uuid" >> "$GITHUB_ENV"
+
+      - name: Store App Store Connect key
+        env:
+          KEY: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          mkdir -p ~/.appstoreconnect/private_keys
+          echo "$KEY" > ~/.appstoreconnect/private_keys/AuthKey_${{ secrets.ASC_KEY_ID }}.p8
+
+      - name: Archive
+        run: |
+          xcodebuild archive \
+            -project Spanscreen.xcodeproj \
+            -scheme SpanscreenIOS \
+            -destination generic/platform=iOS \
+            -archivePath build/Spanscreen-ios.xcarchive \
+            MARKETING_VERSION=${{ steps.version.outputs.version }} \
+            CURRENT_PROJECT_VERSION=${{ steps.version.outputs.build }} \
+            CODE_SIGN_STYLE=Manual \
+            CODE_SIGN_IDENTITY="iPhone Distribution" \
+            PROVISIONING_PROFILE_SPECIFIER=$PROFILE_UUID \
+            DEVELOPMENT_TEAM=$TEAM_ID | xcbeautify --renderer github-actions || exit ${PIPESTATUS[0]}
+
+      - name: Export
+        run: |
+          sed -e "s/__TEAM__/$TEAM_ID/" -e "s/__PROFILE__/$PROFILE_UUID/" scripts/ExportOptions-ios.plist > build/ExportOptions.plist
+          xcodebuild -exportArchive -archivePath build/Spanscreen-ios.xcarchive -exportPath build/ios -exportOptionsPlist build/ExportOptions.plist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Spanscreen-ios
+          path: build/ios/*.ipa
+
+      - name: Upload to App Store Connect
+        run: |
+          xcrun altool --upload-app -f build/ios/Spanscreen.ipa -t ios \
+            --apiKey "${{ secrets.ASC_KEY_ID }}" --apiIssuer "${{ secrets.ASC_ISSUER_ID }}"

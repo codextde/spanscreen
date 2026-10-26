@@ -1,0 +1,13 @@
+.DS_Store
+build/
+DerivedData/
+*.xcuserstate
+xcuserdata/
+.swiftpm/
+Packages/SpanscreenKit/.build/
+*.ipa
+*.dmg
+*.p12
+*.mobileprovision
+*.p8
+.omc/

@@ -1,0 +1,46 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;font-family:-apple-system,"SF Pro Text",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+body{background:radial-gradient(120% 90% at 15% 10%,#3a4fd8 0%,#1d2a6b 35%,#0c1230 70%),#0c1230;position:relative}
+body::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 85% 85%,rgba(91,230,207,.35),transparent 60%),radial-gradient(40% 50% at 60% 20%,rgba(140,110,255,.25),transparent 70%)}
+.menubar{position:absolute;top:0;left:0;right:0;height:var(--mb);background:rgba(20,24,40,.35);backdrop-filter:blur(20px);display:flex;align-items:center;gap:calc(var(--u)*1.6);padding:0 calc(var(--u)*1.4);color:#fff;font-size:calc(var(--u)*1.05);z-index:5}
+.menubar b{font-weight:700}.menubar .right{margin-left:auto;display:flex;gap:calc(var(--u)*1.4);opacity:.95}
+.win{position:absolute;border-radius:calc(var(--u)*1.1);overflow:hidden;box-shadow:0 calc(var(--u)*2) calc(var(--u)*5) rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08);z-index:3}
+.bar{height:calc(var(--u)*2.6);display:flex;align-items:center;gap:calc(var(--u)*.55);padding:0 calc(var(--u)*1);background:#2a2d36}
+.dot{width:calc(var(--u)*.85);height:calc(var(--u)*.85);border-radius:50%}
+.code{background:#1b1d24;color:#c9d1e0;font:calc(var(--u)*0.95)/1.6 "SF Mono",Menlo,monospace;padding:calc(var(--u)*1.2) calc(var(--u)*1.4);height:100%}
+.k{color:#ff7ab2}.t{color:#7fd1ff}.s{color:#ffa86b}.c{color:#7a8296}.f{color:#a7e07a}
+.side{display:flex;height:100%}.sb{width:22%;background:#23262e;padding:calc(var(--u)*1);color:#9aa3b5;font-size:calc(var(--u)*.9);line-height:2.1}
+.sb .on{color:#fff;background:rgba(46,107,255,.35);border-radius:6px;padding:0 6px;margin:0 -6px}
+.cal{background:#fbfbfd;color:#1d1d1f;height:100%;padding:calc(var(--u)*1.2)}
+.cal h4{font-size:calc(var(--u)*1.6);margin-bottom:calc(var(--u)*.8)}
+.ev{border-radius:8px;padding:calc(var(--u)*.6) calc(var(--u)*.8);margin-bottom:calc(var(--u)*.6);font-size:calc(var(--u)*.95)}
+.ev small{display:block;opacity:.7;font-size:calc(var(--u)*.8)}
+.dock{position:absolute;bottom:calc(var(--u)*.8);left:50%;transform:translateX(-50%);display:flex;gap:calc(var(--u)*.7);padding:calc(var(--u)*.6);background:rgba(255,255,255,.18);backdrop-filter:blur(20px);border-radius:calc(var(--u)*1.6);z-index:4;border:1px solid rgba(255,255,255,.2)}
+.app{width:calc(var(--u)*3.6);height:calc(var(--u)*3.6);border-radius:calc(var(--u)*.9)}
+</style></head><body>
+<div class="menubar"><b>Code</b><span>File</span><span>Edit</span><span>View</span><span>Find</span><span>Editor</span><span>Window</span><span>Help</span><div class="right"><span>Mon 26 Oct</span><span>9:41</span></div></div>
+<div class="win" id="w1"><div class="bar"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span></div>
+<div class="side"><div class="sb"><div>Spanscreen</div><div>&nbsp;&nbsp;Mac</div><div class="on">&nbsp;&nbsp;StreamPipeline</div><div>&nbsp;&nbsp;VirtualDisplay</div><div>&nbsp;&nbsp;HostSession</div><div>&nbsp;&nbsp;iOS</div><div>&nbsp;&nbsp;SpanscreenKit</div></div>
+<div class="code" style="flex:1"><span class="k">func</span> <span class="f">start</span>(capture: <span class="t">ScreenCapturer</span>.<span class="t">Configuration</span>) <span class="k">async throws</span> {<br>
+&nbsp;&nbsp;<span class="k">try</span> encoder.<span class="f">configure</span>(width: capture.width,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;height: capture.height, framesPerSecond: <span class="s">120</span>)<br>
+&nbsp;&nbsp;encoder.<span class="f">requestKeyframe</span>()<br>
+&nbsp;&nbsp;<span class="k">try await</span> capturer.<span class="f">start</span>(capture)<br>}<br><br>
+<span class="c">// Low latency: no reordering, ack every frame</span><br>
+<span class="k">let</span> frame = <span class="t">VideoFrame</span>(index: frameIndex,<br>
+&nbsp;&nbsp;isKeyframe: output.isKeyframe, data: output.data)<br>
+transport.<span class="f">send</span>(<span class="t">Message</span>(type: .frame, payload: frame.<span class="f">encoded</span>()))</div></div></div>
+<div class="win" id="w2"><div class="bar" style="background:#e9e9ee"><span class="dot" style="background:#ff5f57"></span><span class="dot" style="background:#febc2e"></span><span class="dot" style="background:#28c840"></span></div>
+<div class="cal"><h4>Today</h4>
+<div class="ev" style="background:#dfe9ff;color:#1a3fa8">Design review<small>10:00 – 10:45</small></div>
+<div class="ev" style="background:#e0f7f1;color:#0f6b58">Ship Spanscreen 1.0<small>13:00</small></div>
+<div class="ev" style="background:#fdeedd;color:#9a5a12">Lunch with the team<small>12:00 – 13:00</small></div></div></div>
+<div class="dock"><div class="app" style="background:linear-gradient(#5fb2ff,#1f6fff)"></div><div class="app" style="background:linear-gradient(#fff,#e4e4e8)"></div><div class="app" style="background:linear-gradient(#4ee07a,#16a34a)"></div><div class="app" style="background:linear-gradient(#ffd25f,#ff9f0a)"></div><div class="app" style="background:linear-gradient(#ff7a7a,#ff375f)"></div><div class="app" style="background:linear-gradient(#20232c,#0b0d12)"></div></div>
+<script>
+const p=new URLSearchParams(location.search);const W=+p.get('w'),H=+p.get('h');
+const u=Math.min(W,H)/60;document.documentElement.style.setProperty('--u',u+'px');document.documentElement.style.setProperty('--mb',(u*2.2)+'px');
+const w1=document.getElementById('w1'),w2=document.getElementById('w2');
+if(W>H){w1.style.cssText+=`;left:${W*.05}px;top:${H*.12}px;width:${W*.58}px;height:${H*.62}px`;w2.style.cssText+=`;left:${W*.66}px;top:${H*.2}px;width:${W*.29}px;height:${H*.52}px`}
+else{w1.style.cssText+=`;left:${W*.05}px;top:${H*.07}px;width:${W*.9}px;height:${H*.42}px`;w2.style.cssText+=`;left:${W*.2}px;top:${H*.53}px;width:${W*.6}px;height:${H*.3}px`}
+</script></body></html>

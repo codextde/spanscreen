@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1B2335"/>
+      <stop offset="1" stop-color="#090C14"/>
+    </linearGradient>
+    <linearGradient id="band" gradientUnits="userSpaceOnUse" x1="100" y1="0" x2="940" y2="0">
+      <stop offset="0" stop-color="#2D5BFF"/>
+      <stop offset="0.6" stop-color="#3BA0FF"/>
+      <stop offset="1" stop-color="#5BE6CF"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1A2233"/>
+      <stop offset="1" stop-color="#0F141F"/>
+    </linearGradient>
+    <clipPath id="mac"><rect x="80" y="262" width="560" height="380" rx="34"/></clipPath>
+    <clipPath id="phone"><rect x="672" y="516" width="272" height="126" rx="34"/></clipPath>
+  </defs>
+  <rect width="1024" height="1024" fill="url(#bg)"/>
+  <g id="ribbon-src" display="none">
+    <path d="M 20 520 C 250 330, 470 700, 1000 575" fill="none" stroke="url(#band)" stroke-width="150" stroke-linecap="round"/>
+  </g>
+  <rect x="80" y="262" width="560" height="380" rx="34" fill="url(#screen)"/>
+  <g clip-path="url(#mac)">
+    <path d="M 20 520 C 250 330, 470 700, 1000 575" fill="none" stroke="url(#band)" stroke-width="150"/>
+  </g>
+  <rect x="80" y="262" width="560" height="380" rx="34" fill="none" stroke="#3B4760" stroke-width="12"/>
+  <path d="M 314 642 L 406 642 L 422 714 L 298 714 Z" fill="#283146"/>
+  <rect x="246" y="708" width="228" height="20" rx="10" fill="#3B4760"/>
+  <rect x="672" y="516" width="272" height="126" rx="34" fill="url(#screen)"/>
+  <g clip-path="url(#phone)">
+    <path d="M 20 520 C 250 330, 470 700, 1000 575" fill="none" stroke="url(#band)" stroke-width="150"/>
+  </g>
+  <rect x="672" y="516" width="272" height="126" rx="34" fill="none" stroke="#3B4760" stroke-width="12"/>
+  <rect x="688" y="560" width="11" height="38" rx="5.5" fill="#090C14"/>
+</svg>
