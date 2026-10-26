@@ -7,10 +7,10 @@ enum DisplayPosition: String, CaseIterable, Codable, Identifiable {
 
     var title: String {
         switch self {
-        case .left: return "Left"
-        case .right: return "Right"
-        case .above: return "Above"
-        case .below: return "Below"
+        case .left: return String(localized: "Left")
+        case .right: return String(localized: "Right")
+        case .above: return String(localized: "Above")
+        case .below: return String(localized: "Below")
         }
     }
 }

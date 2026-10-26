@@ -77,8 +77,8 @@ struct OnboardingView: View {
 
 private struct Step<Accessory: View>: View {
     let number: Int
-    let title: String
-    let detail: String
+    let title: LocalizedStringKey
+    let detail: LocalizedStringKey
     @ViewBuilder let accessory: () -> Accessory
 
     var body: some View {

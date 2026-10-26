@@ -84,8 +84,8 @@ struct StreamOverlay: View {
 
 private struct StatusCard: View {
     @EnvironmentObject private var model: ReceiverModel
-    let title: String
-    let subtitle: String
+    let title: LocalizedStringKey
+    let subtitle: LocalizedStringKey
     let showsDisconnect: Bool
 
     var body: some View {
@@ -235,7 +235,7 @@ struct ControlPanel: View {
 }
 
 private struct PanelButton: View {
-    let title: String
+    let title: LocalizedStringKey
     let symbol: String
     let active: Bool
     var tint: Color = .white

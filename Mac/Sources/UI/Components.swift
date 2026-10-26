@@ -32,7 +32,7 @@ struct QRCodeView: View {
 }
 
 struct Pill: View {
-    let text: String
+    let text: LocalizedStringKey
     let systemImage: String
     var tint: Color = .secondary
 
@@ -44,13 +44,15 @@ struct Pill: View {
             .padding(.vertical, 2)
             .foregroundStyle(tint)
             .background(tint.opacity(0.12), in: Capsule())
+            .fixedSize()
     }
 }
 
 struct SectionLabel: View {
-    let text: String
+    let text: LocalizedStringKey
     var body: some View {
-        Text(text.uppercased())
+        Text(text)
+            .textCase(.uppercase)
             .font(.system(size: 10, weight: .semibold))
             .tracking(0.6)
             .foregroundStyle(.secondary)
@@ -60,10 +62,10 @@ struct SectionLabel: View {
 extension TextSize {
     var title: String {
         switch self {
-        case .larger: return "Larger"
-        case .standard: return "Default"
-        case .moreSpace: return "More Space"
-        case .mostSpace: return "Most Space"
+        case .larger: return String(localized: "Larger")
+        case .standard: return String(localized: "Default")
+        case .moreSpace: return String(localized: "More Space")
+        case .mostSpace: return String(localized: "Most Space")
         }
     }
 }
@@ -71,15 +73,15 @@ extension TextSize {
 extension StreamQuality {
     var title: String {
         switch self {
-        case .efficient: return "Efficient"
-        case .balanced: return "Balanced"
-        case .best: return "Best"
+        case .efficient: return String(localized: "Efficient")
+        case .balanced: return String(localized: "Balanced")
+        case .best: return String(localized: "Best")
         }
     }
 }
 
 extension DisplayMode {
-    var title: String { self == .extend ? "Extend" : "Mirror" }
+    var title: String { self == .extend ? String(localized: "Extend") : String(localized: "Mirror") }
 }
 
 func deviceSymbol(_ model: String) -> String {

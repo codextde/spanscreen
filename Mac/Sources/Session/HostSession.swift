@@ -149,7 +149,7 @@ final class HostSession: ObservableObject, Identifiable {
         case .deviceInfo:
             guard let info = message.decode(DeviceInfo.self) else { return }
             guard info.protocolVersion == Spanscreen.protocolVersion else {
-                fail("Update Spanscreen on your Mac and iPhone to the same version.")
+                fail(String(localized: "Update Spanscreen on your Mac and iPhone to the same version."))
                 return
             }
             guard info.deviceID == id else {
@@ -191,7 +191,7 @@ final class HostSession: ObservableObject, Identifiable {
             t.close()
             if transport == nil {
                 let reason = message.decode(Decline.self)?.reason
-                fail(reason == .busy ? "\(name) is already in use by another Mac." : "\(name) declined the connection.")
+                fail(reason == .busy ? String(localized: "\(name) is already in use by another Mac.") : String(localized: "\(name) declined the connection."))
             }
         case .display:
             guard t === transport, let info = message.decode(DisplayInfo.self), device?.display != info else { return }
@@ -234,7 +234,7 @@ final class HostSession: ObservableObject, Identifiable {
         pending = nil
         t.close()
         if transport == nil {
-            fail("\(name) could not be verified. Click Connect to pair it again.")
+            fail(String(localized: "\(name) could not be verified. Click Connect to pair it again."))
         }
     }
 
@@ -266,7 +266,7 @@ final class HostSession: ObservableObject, Identifiable {
         if pending?.transport === t {
             pending = nil
             if transport == nil, phase != .reconnecting, !userEnded {
-                fail(error.map { "Could not connect: \($0.localizedDescription)" } ?? "\(name) closed the connection.")
+                fail(error.map { String(localized: "Could not connect: \($0.localizedDescription)") } ?? String(localized: "\(name) closed the connection."))
             }
             return
         }
@@ -392,7 +392,7 @@ final class HostSession: ObservableObject, Identifiable {
                 let configured = await display.configure(points: plan.points, refreshRate: Double(plan.framesPerSecond))
                 guard isActive else { return }
                 guard configured else {
-                    throw NSError(domain: "Spanscreen", code: 2, userInfo: [NSLocalizedDescriptionKey: "macOS did not accept the display mode."])
+                    throw NSError(domain: "Spanscreen", code: 2, userInfo: [NSLocalizedDescriptionKey: String(localized: "macOS did not accept the display mode.")])
                 }
                 capture = .init(displayID: display.displayID, width: Int(plan.pixels.width), height: Int(plan.pixels.height), framesPerSecond: plan.framesPerSecond)
                 position = display.currentPosition
@@ -427,7 +427,7 @@ final class HostSession: ObservableObject, Identifiable {
         let maxPixels = (Int(maxSide * 2 / TextSize.mostSpace.pixelsPerPoint) + 15) & ~15
         guard let created = VirtualDisplay(name: name, serial: VirtualDisplay.serial(for: id),
                                            sizeInMillimeters: CGSize(width: mm.width, height: mm.height), maxPixels: maxPixels) else {
-            throw NSError(domain: "Spanscreen", code: 3, userInfo: [NSLocalizedDescriptionKey: "macOS could not create the virtual display."])
+            throw NSError(domain: "Spanscreen", code: 3, userInfo: [NSLocalizedDescriptionKey: String(localized: "macOS could not create the virtual display.")])
         }
         display = created
         return created

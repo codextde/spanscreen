@@ -1,0 +1,658 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "Allow": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erlauben"
+          }
+        }
+      }
+    },
+    "Click": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Klicken"
+          }
+        }
+      }
+    },
+    "Connect": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbinden"
+          }
+        }
+      }
+    },
+    "Connect to “%@”?": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit „%@“ verbinden?"
+          }
+        }
+      }
+    },
+    "Connecting to %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbinden mit %@"
+          }
+        }
+      }
+    },
+    "Connecting…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbinden …"
+          }
+        }
+      }
+    },
+    "Control": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Steuerung"
+          }
+        }
+      }
+    },
+    "Disconnect": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trennen"
+          }
+        }
+      }
+    },
+    "Display": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildschirm"
+          }
+        }
+      }
+    },
+    "Don't Allow": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht erlauben"
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fertig"
+          }
+        }
+      }
+    },
+    "Drag": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ziehen"
+          }
+        }
+      }
+    },
+    "Drag windows and select": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fenster ziehen und auswählen"
+          }
+        }
+      }
+    },
+    "Extend": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erweitern"
+          }
+        }
+      }
+    },
+    "First time? Click Connect next to “%@” in the Spanscreen menu on %@.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zum ersten Mal? Klicke im Spanscreen-Menü auf %2$@ neben „%1$@“ auf Verbinden."
+          }
+        }
+      }
+    },
+    "Forget": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vergessen"
+          }
+        }
+      }
+    },
+    "Free, send the link to your Mac": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kostenlos, schick dir den Link an deinen Mac"
+          }
+        }
+      }
+    },
+    "Gestures": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gesten"
+          }
+        }
+      }
+    },
+    "Get Spanscreen for Mac": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spanscreen für Mac laden"
+          }
+        }
+      }
+    },
+    "Get Spanscreen for Mac to use your iPhone as a second display.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hol dir Spanscreen für Mac, um dein iPhone als zweiten Bildschirm zu nutzen."
+          }
+        }
+      }
+    },
+    "Hide controls": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Steuerung ausblenden"
+          }
+        }
+      }
+    },
+    "Input": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eingabe"
+          }
+        }
+      }
+    },
+    "Keep Spanscreen open on both devices.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lass Spanscreen auf beiden Geräten geöffnet."
+          }
+        }
+      }
+    },
+    "Keyboard": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tastatur"
+          }
+        }
+      }
+    },
+    "Larger text": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Größere Schrift"
+          }
+        }
+      }
+    },
+    "Looking for Macs running Spanscreen…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suche nach Macs mit Spanscreen …"
+          }
+        }
+      }
+    },
+    "Mac": {
+      "shouldTranslate": false
+    },
+    "Mac display": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mac-Bildschirm"
+          }
+        }
+      }
+    },
+    "Mirror": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spiegeln"
+          }
+        }
+      }
+    },
+    "Mode": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modus"
+          }
+        }
+      }
+    },
+    "More space": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mehr Platz"
+          }
+        }
+      }
+    },
+    "NEARBY MACS": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "MACS IN DER NÄHE"
+          }
+        }
+      }
+    },
+    "Name": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Name"
+          }
+        }
+      }
+    },
+    "Open Spanscreen on your Mac and choose “%@”, or pick your Mac below.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffne Spanscreen auf deinem Mac und wähle „%@“ oder tippe unten auf deinen Mac."
+          }
+        }
+      }
+    },
+    "Pointer speed": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zeigergeschwindigkeit"
+          }
+        }
+      }
+    },
+    "Privacy": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Datenschutz"
+          }
+        }
+      }
+    },
+    "Ready to connect": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bereit zum Verbinden"
+          }
+        }
+      }
+    },
+    "Reconnecting to %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erneut verbinden mit %@"
+          }
+        }
+      }
+    },
+    "Right-click": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechtsklick"
+          }
+        }
+      }
+    },
+    "Scroll": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrollen"
+          }
+        }
+      }
+    },
+    "Setting up the display…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildschirm wird eingerichtet …"
+          }
+        }
+      }
+    },
+    "Settings": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen"
+          }
+        }
+      }
+    },
+    "Show connection stats": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbindungsstatistik anzeigen"
+          }
+        }
+      }
+    },
+    "Show controls": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Steuerung einblenden"
+          }
+        }
+      }
+    },
+    "Source Code on GitHub": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quellcode auf GitHub"
+          }
+        }
+      }
+    },
+    "Spanscreen": {
+      "shouldTranslate": false
+    },
+    "Spanscreen %@ by Codext. Free and open source. No account, no tracking: video and input stay on your local network or cable.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spanscreen %@ von Codext. Kostenlos und Open Source. Kein Konto, kein Tracking: Bild und Eingaben bleiben in deinem lokalen Netzwerk oder am Kabel."
+          }
+        }
+      }
+    },
+    "Spanscreen for Mac": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spanscreen für Mac"
+          }
+        }
+      }
+    },
+    "Starting…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wird gestartet …"
+          }
+        }
+      }
+    },
+    "Stats": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Statistik"
+          }
+        }
+      }
+    },
+    "Tap": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tippen"
+          }
+        }
+      }
+    },
+    "These Macs connect without asking. Swipe to forget one.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Diese Macs verbinden sich ohne Nachfrage. Wische, um einen zu vergessen."
+          }
+        }
+      }
+    },
+    "This iPad": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses iPad"
+          }
+        }
+      }
+    },
+    "This iPhone": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses iPhone"
+          }
+        }
+      }
+    },
+    "This iPhone becomes a display for the Mac and can control it with touch. You can disconnect at any time.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses iPhone wird zum Bildschirm für den Mac und kann ihn per Touch steuern. Du kannst die Verbindung jederzeit trennen."
+          }
+        }
+      }
+    },
+    "Three-finger tap": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit drei Fingern tippen"
+          }
+        }
+      }
+    },
+    "Touch": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Touch"
+          }
+        }
+      }
+    },
+    "Touch and hold": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Berühren und halten"
+          }
+        }
+      }
+    },
+    "Trackpad": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trackpad"
+          }
+        }
+      }
+    },
+    "Trusted Macs": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vertrauenswürdige Macs"
+          }
+        }
+      }
+    },
+    "Turn off to keep the Mac picture clear of the camera area.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ausschalten, um den Bereich um die Kamera frei zu lassen."
+          }
+        }
+      }
+    },
+    "Two-finger drag": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit zwei Fingern ziehen"
+          }
+        }
+      }
+    },
+    "Two-finger tap": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mit zwei Fingern tippen"
+          }
+        }
+      }
+    },
+    "USB": {
+      "shouldTranslate": false
+    },
+    "Use the whole screen": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ganzen Bildschirm nutzen"
+          }
+        }
+      }
+    },
+    "Wi-Fi": {
+      "shouldTranslate": false
+    },
+    "Wi-Fi and USB ready": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WLAN und USB bereit"
+          }
+        }
+      }
+    },
+    "Your Mac shows this name in the Spanscreen menu.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dein Mac zeigt diesen Namen im Spanscreen-Menü."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

@@ -57,10 +57,10 @@ struct MenuContentView: View {
     private var statusLine: String {
         let live = model.sessions.values.filter { $0.phase.isLive }
         if let session = live.first {
-            let extra = live.count > 1 ? " +\(live.count - 1)" : ""
-            return "\(session.options.mode == .extend ? "Extending to" : "Mirroring to") \(session.name)\(extra)"
+            let name = live.count > 1 ? "\(session.name) +\(live.count - 1)" : session.name
+            return session.options.mode == .extend ? String(localized: "Extending to \(name)") : String(localized: "Mirroring to \(name)")
         }
-        return "Your iPhone as a second display"
+        return String(localized: "Your iPhone as a second display")
     }
 
     private var footer: some View {
@@ -118,8 +118,8 @@ struct PermissionBanner: View {
 }
 
 struct PermissionRow: View {
-    let title: String
-    let detail: String
+    let title: LocalizedStringKey
+    let detail: LocalizedStringKey
     let granted: Bool
     let action: () -> Void
 
@@ -300,15 +300,13 @@ struct SessionControls: View {
                     .frame(width: 150)
                 }
             }
-            HStack {
+            VStack(alignment: .leading, spacing: 5) {
                 Text("Quality").font(.system(size: 11, weight: .medium))
-                Spacer()
                 Picker("", selection: binding(\.quality)) {
                     ForEach(StreamQuality.allCases, id: \.self) { Text($0.title).tag($0) }
                 }
                 .pickerStyle(.segmented)
                 .labelsHidden()
-                .frame(width: 210)
             }
             if (session.device?.display.maxRefreshRate ?? 60) >= 120 {
                 Toggle(isOn: binding(\.highRefreshRate)) {

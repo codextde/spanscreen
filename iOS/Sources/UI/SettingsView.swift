@@ -13,7 +13,7 @@ struct SettingsView: View {
                         .textInputAutocapitalization(.words)
                         .submitLabel(.done)
                 } header: {
-                    Text("This \(DeviceIdentity.isPad ? "iPad" : "iPhone")")
+                    Text(DeviceIdentity.isPad ? "This iPad" : "This iPhone")
                 } footer: {
                     Text("Your Mac shows this name in the Spanscreen menu.")
                 }
@@ -90,8 +90,8 @@ struct SettingsView: View {
 
 private struct GestureRow: View {
     let symbol: String
-    let title: String
-    let detail: String
+    let title: LocalizedStringKey
+    let detail: LocalizedStringKey
 
     var body: some View {
         HStack {

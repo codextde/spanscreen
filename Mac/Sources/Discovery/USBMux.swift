@@ -14,8 +14,8 @@ enum USBMuxError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case let .socket(code): return "usbmuxd socket error \(code)"
-        case let .refused(code): return "The iPhone refused the cable connection (\(code))."
-        case .protocolError: return "Unexpected usbmuxd response."
+        case let .refused(code): return String(localized: "The iPhone refused the cable connection (\(code)).")
+        case .protocolError: return String(localized: "Unexpected usbmuxd response.")
         }
     }
 }

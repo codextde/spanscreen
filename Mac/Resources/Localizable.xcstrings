@@ -1,0 +1,765 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "%@ closed the connection.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ hat die Verbindung beendet."
+          }
+        }
+      }
+    },
+    "%@ could not be verified. Click Connect to pair it again.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ konnte nicht verifiziert werden. Klicke auf Verbinden, um es neu zu koppeln."
+          }
+        }
+      }
+    },
+    "%@ declined the connection.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ hat die Verbindung abgelehnt."
+          }
+        }
+      }
+    },
+    "%@ is already in use by another Mac.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ wird schon von einem anderen Mac verwendet."
+          }
+        }
+      }
+    },
+    "Above": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oben"
+          }
+        }
+      }
+    },
+    "Accessibility": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedienungshilfen"
+          }
+        }
+      }
+    },
+    "Allow": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erlauben"
+          }
+        }
+      }
+    },
+    "Allow Accessibility": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bedienungshilfen erlauben"
+          }
+        }
+      }
+    },
+    "Allow Screen Recording": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildschirmaufnahme erlauben"
+          }
+        }
+      }
+    },
+    "Allowed": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erlaubt"
+          }
+        }
+      }
+    },
+    "Allow…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erlauben …"
+          }
+        }
+      }
+    },
+    "Balanced": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ausgewogen"
+          }
+        }
+      }
+    },
+    "Below": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unten"
+          }
+        }
+      }
+    },
+    "Best": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beste"
+          }
+        }
+      }
+    },
+    "Confirm on %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf %@ bestätigen"
+          }
+        }
+      }
+    },
+    "Connect": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbinden"
+          }
+        }
+      }
+    },
+    "Connecting…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbinden …"
+          }
+        }
+      }
+    },
+    "Could not connect: %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verbindung fehlgeschlagen: %@"
+          }
+        }
+      }
+    },
+    "Default": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Standard"
+          }
+        }
+      }
+    },
+    "Devices": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geräte"
+          }
+        }
+      }
+    },
+    "Disconnect": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trennen"
+          }
+        }
+      }
+    },
+    "Disconnected": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Getrennt"
+          }
+        }
+      }
+    },
+    "Displays Settings…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einstellungen für Displays …"
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fertig"
+          }
+        }
+      }
+    },
+    "Efficient": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Effizient"
+          }
+        }
+      }
+    },
+    "Extend": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erweitern"
+          }
+        }
+      }
+    },
+    "Extend or mirror your Mac to iPhone over Wi-Fi or a USB cable. Free and open source.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erweitere oder spiegle deinen Mac auf das iPhone, per WLAN oder USB-Kabel. Kostenlos und Open Source."
+          }
+        }
+      }
+    },
+    "Extending to %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erweitert auf %@"
+          }
+        }
+      }
+    },
+    "Forget This Device": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dieses Gerät vergessen"
+          }
+        }
+      }
+    },
+    "Get Spanscreen for iPhone": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spanscreen für iPhone laden"
+          }
+        }
+      }
+    },
+    "It shows up here when it is on the same Wi-Fi or connected with a cable. Scan to get the free app.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Es erscheint hier, wenn es im selben WLAN oder per Kabel verbunden ist. Scanne den Code für die kostenlose App."
+          }
+        }
+      }
+    },
+    "Larger": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Größer"
+          }
+        }
+      }
+    },
+    "Left": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Links"
+          }
+        }
+      }
+    },
+    "Lets you click and scroll with touch.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Damit du per Touch klicken und scrollen kannst."
+          }
+        }
+      }
+    },
+    "Mirror": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spiegeln"
+          }
+        }
+      }
+    },
+    "Mirroring to %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gespiegelt auf %@"
+          }
+        }
+      }
+    },
+    "More Space": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mehr Platz"
+          }
+        }
+      }
+    },
+    "Most Space": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maximaler Platz"
+          }
+        }
+      }
+    },
+    "Needed to show your screen on the iPhone.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nötig, um deinen Bildschirm auf dem iPhone zu zeigen."
+          }
+        }
+      }
+    },
+    "No hardware video encoder available.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kein Hardware-Videoencoder verfügbar."
+          }
+        }
+      }
+    },
+    "Open Spanscreen on the device": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffne Spanscreen auf dem Gerät"
+          }
+        }
+      }
+    },
+    "Open Spanscreen on your iPhone": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffne Spanscreen auf deinem iPhone"
+          }
+        }
+      }
+    },
+    "Open at Login": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Anmelden öffnen"
+          }
+        }
+      }
+    },
+    "Open at login": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beim Anmelden öffnen"
+          }
+        }
+      }
+    },
+    "Open it on the same Wi-Fi or plug in the cable. Your iPhone appears in the menu bar.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffne es im selben WLAN oder schließ das Kabel an. Dein iPhone erscheint in der Menüleiste."
+          }
+        }
+      }
+    },
+    "Paused on iPhone": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf dem iPhone pausiert"
+          }
+        }
+      }
+    },
+    "Position": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Position"
+          }
+        }
+      }
+    },
+    "ProMotion 120 Hz": {
+      "shouldTranslate": false
+    },
+    "Quality": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualität"
+          }
+        }
+      }
+    },
+    "Quit": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Beenden"
+          }
+        }
+      }
+    },
+    "Quit Spanscreen": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spanscreen beenden"
+          }
+        }
+      }
+    },
+    "Ready": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bereit"
+          }
+        }
+      }
+    },
+    "Reconnecting…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Erneut verbinden …"
+          }
+        }
+      }
+    },
+    "Right": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechts"
+          }
+        }
+      }
+    },
+    "Screen Recording": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildschirmaufnahme"
+          }
+        }
+      }
+    },
+    "Smoothest motion over USB": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Flüssigste Bewegung per USB"
+          }
+        }
+      }
+    },
+    "Source Code on GitHub": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quellcode auf GitHub"
+          }
+        }
+      }
+    },
+    "Spanscreen": {
+      "shouldTranslate": false
+    },
+    "Spanscreen needs Screen Recording permission.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spanscreen braucht die Berechtigung für Bildschirmaufnahmen."
+          }
+        }
+      }
+    },
+    "Spanscreen streams the virtual display to your iPhone. Nothing leaves your network.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spanscreen überträgt den virtuellen Bildschirm auf dein iPhone. Nichts verlässt dein Netzwerk."
+          }
+        }
+      }
+    },
+    "Starting display…": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bildschirm wird gestartet …"
+          }
+        }
+      }
+    },
+    "Text size": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Textgröße"
+          }
+        }
+      }
+    },
+    "The display to capture is not available.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Bildschirm für die Aufnahme ist nicht verfügbar."
+          }
+        }
+      }
+    },
+    "The iPhone refused the cable connection (%lld).": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Das iPhone hat die Kabelverbindung abgelehnt (%lld)."
+          }
+        }
+      }
+    },
+    "Turns taps, drags and two-finger scrolls on iPhone into clicks and scrolls.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Macht aus Tippen, Ziehen und Scrollen mit zwei Fingern auf dem iPhone Klicks und Scrollen."
+          }
+        }
+      }
+    },
+    "USB": {
+      "shouldTranslate": false
+    },
+    "Unexpected usbmuxd response.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unerwartete Antwort von usbmuxd."
+          }
+        }
+      }
+    },
+    "Update Spanscreen on your Mac and iPhone to the same version.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktualisiere Spanscreen auf Mac und iPhone auf dieselbe Version."
+          }
+        }
+      }
+    },
+    "Update to %@": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Auf %@ aktualisieren"
+          }
+        }
+      }
+    },
+    "Wants to connect, click Connect": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Möchte sich verbinden, klicke auf Verbinden"
+          }
+        }
+      }
+    },
+    "Welcome Guide": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Einführung"
+          }
+        }
+      }
+    },
+    "Wi-Fi": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WLAN"
+          }
+        }
+      }
+    },
+    "Wi-Fi or USB cable": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "WLAN oder USB-Kabel"
+          }
+        }
+      }
+    },
+    "Works best with a USB cable": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Am besten mit USB-Kabel"
+          }
+        }
+      }
+    },
+    "Your iPhone as a second display": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dein iPhone als zweiter Bildschirm"
+          }
+        }
+      }
+    },
+    "Your iPhone is now a display": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dein iPhone ist jetzt ein Bildschirm"
+          }
+        }
+      }
+    },
+    "macOS could not create the virtual display.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS konnte den virtuellen Bildschirm nicht erstellen."
+          }
+        }
+      }
+    },
+    "macOS did not accept the display mode.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS hat den Bildschirmmodus nicht akzeptiert."
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

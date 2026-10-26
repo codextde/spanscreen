@@ -1,0 +1,16 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "NSLocalNetworkUsageDescription": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spanscreen findet dein iPhone im lokalen Netzwerk, um es als Bildschirm zu nutzen."
+          }
+        }
+      }
+    }
+  }
+}

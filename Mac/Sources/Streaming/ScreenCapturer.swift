@@ -8,8 +8,8 @@ enum CaptureError: LocalizedError {
 
     var errorDescription: String? {
         switch self {
-        case .displayNotFound: return "The display to capture is not available."
-        case .permissionDenied: return "Spanscreen needs Screen Recording permission."
+        case .displayNotFound: return String(localized: "The display to capture is not available.")
+        case .permissionDenied: return String(localized: "Spanscreen needs Screen Recording permission.")
         }
     }
 }

@@ -1,12 +1,12 @@
-import Foundation
 import SpanscreenKit
+import SwiftUI
 
 enum TouchMode: String, CaseIterable, Identifiable {
     case touch
     case trackpad
 
     var id: String { rawValue }
-    var title: String { self == .touch ? "Touch" : "Trackpad" }
+    var title: LocalizedStringKey { self == .touch ? "Touch" : "Trackpad" }
     var symbol: String { self == .touch ? "hand.tap" : "rectangle.and.hand.point.up.left" }
 }
 

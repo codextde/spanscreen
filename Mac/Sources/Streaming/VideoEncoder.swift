@@ -51,7 +51,7 @@ final class VideoEncoder: @unchecked Sendable {
                 break
             }
         }
-        guard let session = created else { throw NSError(domain: "Spanscreen", code: 1, userInfo: [NSLocalizedDescriptionKey: "No hardware video encoder available."]) }
+        guard let session = created else { throw NSError(domain: "Spanscreen", code: 1, userInfo: [NSLocalizedDescriptionKey: String(localized: "No hardware video encoder available.")]) }
         let profile = codec == .hevc ? kVTProfileLevel_HEVC_Main_AutoLevel : kVTProfileLevel_H264_High_AutoLevel
         VTSessionSetProperty(session, key: kVTCompressionPropertyKey_ProfileLevel, value: profile)
         VTSessionSetProperty(session, key: kVTCompressionPropertyKey_RealTime, value: kCFBooleanTrue)

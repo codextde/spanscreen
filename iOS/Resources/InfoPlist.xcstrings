@@ -1,0 +1,19 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "NSLocalNetworkUsageDescription": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spanscreen verbindet sich über dein lokales Netzwerk mit Spanscreen auf deinem Mac, damit dein iPhone als Bildschirm funktioniert."
+          }
+        }
+      }
+    },
+    "CFBundleDisplayName": {
+      "shouldTranslate": false
+    }
+  }
+}
