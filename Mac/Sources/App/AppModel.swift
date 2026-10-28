@@ -74,9 +74,7 @@ final class AppModel: ObservableObject {
         directory.onChange = { [weak self] in self?.directoryChanged() }
         directory.onConnectRequest = { [weak self] request in self?.handleConnectRequest(request) }
         directory.start()
-        permissionTimer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { [weak self] _ in
-            Task { @MainActor in self?.refreshPermissions() }
-        }
+        schedulePermissionChecks()
         rebuildRows()
         Task { await checkForUpdate() }
     }
@@ -86,6 +84,16 @@ final class AppModel: ObservableObject {
         let accessibility = InputInjector.isTrusted
         if screen != screenRecordingGranted { screenRecordingGranted = screen }
         if accessibility != accessibilityGranted { accessibilityGranted = accessibility }
+        schedulePermissionChecks()
+    }
+
+    private func schedulePermissionChecks() {
+        let interval: TimeInterval = screenRecordingGranted && accessibilityGranted ? 30 : 2
+        if let timer = permissionTimer, timer.isValid, timer.timeInterval == interval { return }
+        permissionTimer?.invalidate()
+        permissionTimer = Timer.scheduledTimer(withTimeInterval: interval, repeats: true) { [weak self] _ in
+            Task { @MainActor in self?.refreshPermissions() }
+        }
     }
 
     func requestScreenRecording() {
