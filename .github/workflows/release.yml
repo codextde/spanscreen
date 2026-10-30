@@ -102,6 +102,10 @@ jobs:
           if [[ "$GITHUB_REF" == refs/tags/v* ]]; then v="${GITHUB_REF#refs/tags/v}"; else v="$(grep -m1 'MARKETING_VERSION' project.yml | awk '{print $2}')"; fi
           echo "version=$v" >> "$GITHUB_OUTPUT"
           echo "build=$((GITHUB_RUN_NUMBER + 100))" >> "$GITHUB_OUTPUT"
+          sdk=$(xcrun --sdk iphoneos --show-sdk-version)
+          if [ "$(printf '%s\n27.1\n' "$sdk" | sort -V | head -1)" = "27.1" ]; then echo "upload=true" >> "$GITHUB_OUTPUT"; else
+            echo "::warning::iOS SDK $sdk lacks full-screen iPhone Duo support (needs 27.1). Skipping the App Store upload; run scripts/upload-ios.sh on a Mac with Xcode 27.1."
+          fi
 
       - name: Import distribution certificate and profile
         env:
@@ -149,6 +153,7 @@ jobs:
           path: build/ios/*.ipa
 
       - name: Upload to App Store Connect
+        if: steps.version.outputs.upload == 'true'
         run: |
           xcrun altool --upload-app -f build/ios/Spanscreen.ipa -t ios \
             --apiKey "${{ secrets.ASC_KEY_ID }}" --apiIssuer "${{ secrets.ASC_ISSUER_ID }}"
