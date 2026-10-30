@@ -15,13 +15,13 @@ struct HomeView: View {
                 VStack(spacing: 0) {
                     topBar
                     if wide {
-                        HStack(alignment: .center, spacing: 40) {
+                        HStack(alignment: .center, spacing: proxy.size.width < 800 ? 24 : 40) {
                             hero
                             VStack(spacing: 16) {
                                 macsSection
                                 macAppButton
                             }
-                            .frame(maxWidth: 380)
+                            .frame(width: min(380, proxy.size.width * 0.5))
                         }
                         .frame(maxHeight: .infinity)
                     } else {
@@ -85,6 +85,8 @@ struct HomeView: View {
             VStack(spacing: 10) {
                 Text(model.requestingMacID == nil ? "Ready to connect" : "Connecting…")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
                     .contentTransition(.opacity)
                 Text("Open Spanscreen on your Mac and choose “\(settings.deviceName)”, or pick your Mac below.")
                     .font(.callout)
@@ -176,7 +178,7 @@ private struct MacRow: View {
 
     var body: some View {
         Button(action: action) {
-            HStack(spacing: 14) {
+            HStack(spacing: 12) {
                 Image(systemName: "laptopcomputer")
                     .font(.system(size: 18, weight: .medium))
                     .foregroundStyle(Theme.accent)
@@ -185,13 +187,15 @@ private struct MacRow: View {
                 Text(mac.name)
                     .font(.body.weight(.medium))
                     .lineLimit(1)
-                Spacer()
+                    .layoutPriority(1)
+                Spacer(minLength: 8)
                 if connecting {
                     ProgressView()
                 } else {
                     Text("Connect")
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Theme.accent)
+                        .fixedSize()
                 }
             }
             .padding(.horizontal, 14)

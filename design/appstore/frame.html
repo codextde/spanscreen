@@ -10,7 +10,7 @@ h1 span{background:linear-gradient(90deg,#5b8cff,#3ba0ff 55%,#5be6cf);-webkit-ba
 <script>
 const q=new URLSearchParams(location.search);const W=innerWidth,H=innerHeight;const ipad=q.get('kind')==='ipad';
 const t=document.getElementById('t');t.innerHTML=q.get('title');
-const head=ipad?H*.17:H*.22;t.style.fontSize=(ipad?H*.052:H*.075)+'px';t.style.marginTop=(ipad?H*.055:H*.06)+'px';
+const head=ipad?H*.17:H*.22;t.style.fontSize=(ipad?H*.052:q.get('kind')==='duo'?H*.062:H*.075)+'px';t.style.marginTop=(ipad?H*.055:H*.06)+'px';
 const sw=+q.get('sw'),sh=+q.get('sh');const availH=H-head-(ipad?H*.06:H*.07),availW=W*(ipad?.86:.84);
 let s=Math.min(availW/sw,availH/sh);const w=sw*s,h=sh*s;const bez=ipad?H*.018:H*.022;
 const d=document.getElementById('d');d.style.width=(w+bez*2)+'px';d.style.height=(h+bez*2)+'px';d.style.padding=bez+'px';d.style.marginTop=(ipad?H*.035:H*.04)+'px';
